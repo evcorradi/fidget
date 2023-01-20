@@ -41,12 +41,14 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 input.onButtonPressed(Button.B, function () {
-    for (let index = 0; index < 20; index++) {
+    heart = 1
+    while (heart == 1) {
         basic.showIcon(IconNames.SmallHeart)
         basic.showIcon(IconNames.Heart)
     }
 })
 input.onGesture(Gesture.Shake, function () {
+    heart = 0
     basic.showIcon(IconNames.Heart)
     basic.showLeds(`
         . # . . #
@@ -102,5 +104,7 @@ input.onLogoEvent(TouchButtonEvent.Touched, function () {
     basic.showString("tilt left")
 })
 let fair_game = 0
+let heart = 0
 basic.showString("Hello!")
 basic.clearScreen()
+heart = 0
